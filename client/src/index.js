@@ -17,10 +17,10 @@ import registerServiceWorker from './registerServiceWorker';
 const serverHost = process.env.REACT_APP_GRAPHQLDOGS_SERVER || 'localhost:4000';
 
 const networkInterface = createNetworkInterface({ 
-  uri: `http://${serverHost}/graphql`,
+  uri: `https://${serverHost}/graphql`,
 });
 
-const wsClient = new SubscriptionClient(`ws://${serverHost}/subscriptions`, {
+const wsClient = new SubscriptionClient(`wss://${serverHost}/subscriptions`, {
   reconnect: true,
 });
 

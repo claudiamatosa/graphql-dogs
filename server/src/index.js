@@ -30,11 +30,11 @@ server.use('/graphql', bodyParser.json(), graphqlExpress({
 // Configure GraphiQL (pronounced `Graphical`): http://localhost:4000/graphiql?query={__schema{types{name}}}
 server.use('/graphiql', graphiqlExpress({
   endpointURL: '/graphql',
-  subscriptionsEndpoint: `ws://${serverHost}/subscriptions`,
+  subscriptionsEndpoint: `wss://${serverHost}/subscriptions`,
 }));
 
 ws.listen(PORT, () => {
-  console.log(`GraphQL Server is now running on http://localhost:${PORT}`);
+  console.log(`GraphQL Server is now running on https://localhost:${PORT}`);
 
   // Set up the WebSocket for handling GraphQL subscriptions
   new SubscriptionServer({
