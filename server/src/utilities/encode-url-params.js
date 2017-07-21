@@ -4,7 +4,7 @@ import forOwn from 'lodash/fp/forOwn';
   Usage:
   
   encodeUrlParams({q: 'abc 123', size: 20}, {otherParam: '1e2q'});
-  returns 'q=abc%20%123&size=20&otherParam=1e2q'
+  returns 'q=abc%20123&size=20&otherParam=1e2q'
 */
 const encodeUrlParams = (...params) => {
   const allParams = Object.assign({}, ...params);

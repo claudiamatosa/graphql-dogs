@@ -2,10 +2,14 @@
   "name": "graphql-dogs-server",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "scripts": {
     "install:client": "cd ./client && yarn",
     "install:server": "cd ./server && yarn",
     "postinstall": "run-p install:client install:server",
+    "test:client": "cd ./client && yarn test",
+    "test:server": "cd ./server && yarn test",
+    "test": "run-p test:client test:server",
     "start:client": "cd ./client && yarn start",
     "start:server": "cd ./server && yarn start",
     "start": "run-p start:client start:server"

@@ -2,6 +2,7 @@
   "name": "graphql-dogs-server",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
@@ -19,12 +20,29 @@
     "subscriptions-transport-ws": "^0.8.1"
   },
   "scripts": {
-    "start": "nodemon ./src/index.js --exec babel-node -e js"
+    "start": "nodemon ./src/index.js --exec babel-node -e js",
+    "test": "jest",
+    "test:watch": "jest:watch"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "jest": "^20.0.4",
+    "jest-cli": "^20.0.4",
     "nodemon": "^1.11.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "html"
+    ],
+    "moduleNameMapper": {
+      "^mongoose$": "<rootDir>/node_modules/mongoose"
+    }
   }
 }

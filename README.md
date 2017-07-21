@@ -38,5 +38,11 @@ yarn start
 For debugging, it may be more helpful to run the server and client in a separate
 terminal. For those purposes, you can use `yarn start:server` and `yarn start:client`.
 
+## Testing
+
+```
+yarn test
+```
+
 ## Tutorials
 - [Apollo and React Full Stack](https://dev-blog.apollodata.com/full-stack-react-graphql-tutorial-582ac8d24e3b)

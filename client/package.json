@@ -2,6 +2,7 @@
   "name": "graphql-dogs",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "dependencies": {
     "immutability-helper": "^2.3.0",
     "lodash": "^4.17.4",
