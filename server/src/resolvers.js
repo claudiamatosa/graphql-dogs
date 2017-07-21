@@ -1,6 +1,7 @@
 import { PubSub, withFilter } from 'graphql-subscriptions';
 import GraphQLLong from 'graphql-type-long';
 import shuffle from 'lodash/fp/shuffle';
+import interleave from 'loose-interleave';
 import {
   getTwitterPhotos,
   getFlickrPhotos,
@@ -18,7 +19,7 @@ export const resolvers = {
   Query: {
     photos: async () => {
       const [flickr, twitter] = await Promise.all([getFlickrPhotos(), getTwitterPhotos()]);
-      return shuffle(flickr.concat(twitter));
+      return interleave(flickr, twitter);
     },
   },
 

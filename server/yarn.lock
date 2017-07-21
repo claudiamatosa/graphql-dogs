@@ -2452,6 +2452,10 @@ loose-envify@^1.0.0:
   dependencies:
     js-tokens "^3.0.0"
 
+loose-interleave@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/loose-interleave/-/loose-interleave-1.0.0.tgz#6e038cbb3a16a3362bde1b49274399f1851d0577"
+
 lowercase-keys@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/lowercase-keys/-/lowercase-keys-1.0.0.tgz#4e3366b39e7f5457e35f1324bdf6f88d0bfc7306"
