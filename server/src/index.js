@@ -20,7 +20,7 @@ const ws = createServer(server);
 
 server.use('*', cors({ origin: 'http://localhost:3000' }));
 
-// Check schema (instrospection): /graphql?query=%7B__schema%7Btypes%7Bname%7D%7D%7D
+// Check schema (introspection): /graphql?query=%7B__schema%7Btypes%7Bname%7D%7D%7D
 server.use('/graphql', bodyParser.json(), graphqlExpress({
   schema
 }));
@@ -28,7 +28,7 @@ server.use('/graphql', bodyParser.json(), graphqlExpress({
 // Configure GraphiQL (pronounced `Graphical`): http://localhost:4000/graphiql?query={__schema{types{name}}}
 server.use('/graphiql', graphiqlExpress({
   endpointURL: '/graphql',
-  subscriptionsEndpoint: 'ws://localhost:4000/subscriptions',
+  subscriptionsEndpoint: `ws://localhost:${PORT}/subscriptions`,
 }));
 
 ws.listen(PORT, () => {
