@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #222;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 2em;
+}
+
+.App-title-emoji {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.App-header a {
+  color: inherit;
+}
+
+.App-content {
+  margin: 40px auto;
+  max-width: 1200px;
+  font-size: large;
+}
