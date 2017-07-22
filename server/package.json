@@ -22,6 +22,7 @@
   },
   "scripts": {
     "start": "nodemon ./src/index.js --exec babel-node -e js",
+    "start:dev": "NODE_ENV='development' yarn start",
     "test": "jest",
     "test:watch": "jest:watch"
   },

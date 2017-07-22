@@ -11,7 +11,7 @@
     "test:server": "cd ./server && yarn test",
     "test": "run-p test:client test:server",
     "start:client": "cd ./client && yarn start",
-    "start:server": "cd ./server && yarn start",
+    "start:server": "cd ./server && yarn start:dev",
     "start": "run-p start:client start:server"
   },
   "devDependencies": {

@@ -20,7 +20,9 @@ const server = express();
 // Websocket for subscriptions
 const ws = createServer(server);
 
-server.use('*', cors({ origin: 'http://localhost:3000' }));
+if (process.env.NODE_ENV === 'development') {
+  server.use('*', cors({ origin: 'http://localhost:3000' }));
+}
 
 // Check schema (introspection): /graphql?query=%7B__schema%7Btypes%7Bname%7D%7D%7D
 server.use('/graphql', bodyParser.json(), graphqlExpress({
