@@ -19,7 +19,7 @@ describe('get photos query', () => {
     getAverage.mockReset();
   });
 
-  test('returns the a list of interleaved twitter and flickr photos', async () => {
+  test('returns a list of interleaved twitter and flickr photos', async () => {
     const query = `
       query getPhotos {
         photos {
