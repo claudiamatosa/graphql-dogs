@@ -21,7 +21,9 @@
     "subscriptions-transport-ws": "^0.8.1"
   },
   "scripts": {
-    "start": "nodemon ./src/index.js --exec babel-node -e js",
+    "server": "nodemon ./src/index.js --exec babel-node -e js",
+    "start": "NODE_ENV='development' yarn server",
+    "start:prod": "yarn server",
     "test": "jest",
     "test:watch": "jest:watch"
   },
