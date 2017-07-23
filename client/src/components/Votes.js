@@ -11,7 +11,7 @@ const Votes = ({photoHash, currentRating, addVote}) => (
     <p className="Votes-title">Rate this dog</p>
 
     <p className="Votes-current-rating">
-      Current rating: <b>{currentRating || 'N/a'}</b>
+      Average rating: <b>{currentRating || 'N/a'}</b>
     </p>
 
     <div className="Votes-buttons">
