@@ -17,6 +17,12 @@ const App = () => (
         target="_blank"
         rel="noopener noreferrer"
       >WeRateDogs™</a></p>
+
+      <p><a
+        href="https://github.com/claudiamatosa/graphql-dogs"
+        target="_blank"
+        rel="noopener noreferrer"
+      >source code</a></p>
     </div>
 
     <section className="App-content">
