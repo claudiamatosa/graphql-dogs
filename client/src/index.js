@@ -14,13 +14,14 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-const serverHost = process.env.REACT_APP_GRAPHQLDOGS_SERVER || 'localhost:4000';
+const host = process.env.REACT_APP_GRAPHQLDOGS_SERVER || 'localhost:4000';
+const isHttps = process.env.NODE_ENV !== 'development';
 
 const networkInterface = createNetworkInterface({ 
-  uri: `https://${serverHost}/graphql`,
+  uri: `${isHttps ? 'https' : 'http'}://${host}/graphql`,
 });
 
-const wsClient = new SubscriptionClient(`wss://${serverHost}/subscriptions`, {
+const wsClient = new SubscriptionClient(`${isHttps ? 'wss' : 'ws'}://${host}/subscriptions`, {
   reconnect: true,
 });
 

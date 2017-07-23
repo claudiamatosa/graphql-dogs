@@ -14,6 +14,7 @@ import { schema } from './schema';
 const PORT = 4000;
 
 const serverHost = process.env.REACT_APP_GRAPHQLDOGS_SERVER || `localhost:${PORT}`;
+const isHttps = process.env.NODE_ENV !== 'development';
 
 const server = express();
 
@@ -32,11 +33,11 @@ server.use('/graphql', bodyParser.json(), graphqlExpress({
 // Configure GraphiQL (pronounced `Graphical`): http://localhost:4000/graphiql?query={__schema{types{name}}}
 server.use('/graphiql', graphiqlExpress({
   endpointURL: '/graphql',
-  subscriptionsEndpoint: `wss://${serverHost}/subscriptions`,
+  subscriptionsEndpoint: `${isHttps ? 'wss' : 'ws'}://${serverHost}/subscriptions`,
 }));
 
 ws.listen(PORT, () => {
-  console.log(`GraphQL Server is now running on https://localhost:${PORT}`);
+  console.log(`GraphQL Server is now running on ${isHttps ? 'https' : 'http'}://localhost:${PORT}`);
 
   // Set up the WebSocket for handling GraphQL subscriptions
   new SubscriptionServer({
