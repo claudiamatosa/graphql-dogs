@@ -36,7 +36,7 @@ yarn start
 ```
 
 For debugging, it may be more helpful to run the server and client in a separate
-terminal. For those purposes, you can use `yarn start:server` and `yarn start:client`.
+terminal. For those purposes, you can use `yarn start:server` and `yarn start:client:dev`.
 
 ## Testing
 
