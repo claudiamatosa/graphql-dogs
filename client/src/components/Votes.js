@@ -8,7 +8,7 @@ const specialVotes = [11, 12];
 
 const Votes = ({photoHash, currentRating, addVote}) => (
   <div className="Votes">
-    <p className="Votes-title">Rate this dog</p>
+    <p className="Votes-title">Rate this pup</p>
 
     <p className="Votes-current-rating">
       Average rating: <b>{currentRating || 'N/a'}</b>

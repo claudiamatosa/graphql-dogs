@@ -13,7 +13,7 @@ const firebase = Firebase();
 export const getFlickrPhotos = async () => {
   try {
     const photos = await flickr.photos({
-      tags: 'puppy,daschund,jackrussel,chihuahua',
+      tags: 'puppy,daschund,jackrussel,chihuahua,labrador,puppy',
       pageSize: 30,
     });
 
@@ -31,7 +31,7 @@ export const getFlickrPhotos = async () => {
 export const getTwitterPhotos = async () => {
   try {
     const tweets = await twitter.tweets({
-      query: '#puppy filter:images -filter:retweets -from:PUPPERland -from:IBZsYard',
+      query: '#puppy -#cat filter:images filter:safe -filter:retweets -from:PUPPERland -from:IBZsYard',
       // the pageSize is larger for twitter so we can account for non-existing images
       pageSize: 40,
     });

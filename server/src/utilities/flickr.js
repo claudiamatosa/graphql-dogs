@@ -12,6 +12,9 @@ const config = {
     format: 'json',
     nojsoncallback: 1,
     media: 'photos',
+    sort: 'interestingness-desc',
+    safe_search: 3,
+    content_type: 'photos',
   }
 };
 
