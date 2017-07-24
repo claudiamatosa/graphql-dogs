@@ -14,7 +14,7 @@ export const getFlickrPhotos = async () => {
   try {
     const photos = await flickr.photos({
       tags: 'puppy,daschund,jackrussel,chihuahua,labrador,puppy',
-      pageSize: 30,
+      pageSize: 10,
     });
 
     return photos.map(photo => ({
@@ -33,7 +33,7 @@ export const getTwitterPhotos = async () => {
     const tweets = await twitter.tweets({
       query: '#puppy -#cat filter:images filter:safe -filter:retweets -from:PUPPERland -from:IBZsYard',
       // the pageSize is larger for twitter so we can account for non-existing images
-      pageSize: 40,
+      pageSize: 15,
     });
 
     return tweets
